@@ -1,0 +1,20 @@
+version: "3"
+
+services:
+  python-service:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: my_request_python2
+    volumes:
+      - .:/app
+    command: python main.py
+
+  node-service:
+    build:
+      context: .
+      dockerfile: Dockerfile.node
+    image: my_request_node
+    volumes:
+      - .:/app
+    command: node app.js
